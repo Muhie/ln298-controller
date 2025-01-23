@@ -12,9 +12,10 @@ GPIO.output(GPIO_TRIG, GPIO.HIGH)
 time.sleep(0.00001)  
 GPIO.output(GPIO_TRIG, GPIO.LOW)  
 while GPIO.input(GPIO_ECHO)==0:  
-start_time = time.time()  
-while GPIO.input(GPIO_ECHO)==1:  
-Bounce_back_time = time.time()  
-pulse_duration = Bounce_back_time - start_time  distance = round(pulse_duration * 17150, 2)  
-print ("Distance:",distance,"cm")  
-GPIO.cleanup() 
+    start_time = time.time()  
+    while GPIO.input(GPIO_ECHO)==1:  
+        Bounce_back_time = time.time()  
+        pulse_duration = Bounce_back_time - start_time  
+        distance = round(pulse_duration * 17150, 2)  
+        print ("Distance:",distance,"cm")  
+        GPIO.cleanup() 
