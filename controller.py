@@ -36,16 +36,30 @@ class Motors():
         GPIO.output(self.in_2,GPIO.LOW)
         GPIO.output(self.in_3,GPIO.HIGH)
         GPIO.output(self.in_4,GPIO.LOW)
+        self.coast()
     
     def back(self):
         GPIO.output(self.in_1,GPIO.LOW)
         GPIO.output(self.in_2,GPIO.HIGH)
         GPIO.output(self.in_3,GPIO.LOW)
         GPIO.output(self.in_4,GPIO.HIGH)
+        self.coast()
+    
+    def back(self):
+        GPIO.output(self.in_1,GPIO.LOW)
+        GPIO.output(self.in_2,GPIO.HIGH)
+        GPIO.output(self.in_3,GPIO.LOW)
+        GPIO.output(self.in_4,GPIO.HIGH)
+        self.coast()
+
     
     def speed(self, speed):
         self.left.ChangeDutyCycle(speed)
         self.right.ChangeDutyCycle(speed)
+
+    def coast(self):
+        self.left.ChangeDutyCycle(0)
+        self.right.ChangeDutyCycle(0)
 
 
 
