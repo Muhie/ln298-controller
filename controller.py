@@ -6,7 +6,7 @@ What does the code do: A basic ln298 motor control script
 """
 
 import RPi.GPIO as GPIO
-
+import time
 
 
 
@@ -36,21 +36,19 @@ class Motors():
         GPIO.output(self.in_2,GPIO.LOW)
         GPIO.output(self.in_3,GPIO.HIGH)
         GPIO.output(self.in_4,GPIO.LOW)
-        self.coast()
     
     def back(self):
         GPIO.output(self.in_1,GPIO.LOW)
         GPIO.output(self.in_2,GPIO.HIGH)
         GPIO.output(self.in_3,GPIO.LOW)
         GPIO.output(self.in_4,GPIO.HIGH)
-        self.coast()
+
     
     def back(self):
         GPIO.output(self.in_1,GPIO.LOW)
         GPIO.output(self.in_2,GPIO.HIGH)
         GPIO.output(self.in_3,GPIO.LOW)
         GPIO.output(self.in_4,GPIO.HIGH)
-        self.coast()
 
     
     def speed(self, speed):
@@ -67,3 +65,5 @@ if __name__ == "__main__":
     p = Motors(25, 24, 23, 11, 10, 9)
     p.speed(50)
     p.forward()
+    time.sleep(10)
+    p.coast()
