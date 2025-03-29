@@ -18,3 +18,4 @@ for ii in range(0,3):
     pwm.ChangeDutyCycle(2.0) # rotate to 0 degrees
     time.sleep(0.5)
     pwm.ChangeDutyCycle(7.0) # rotate to 180 degrees
+    time.sleep(0.5)
